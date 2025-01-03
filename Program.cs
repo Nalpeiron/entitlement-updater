@@ -49,7 +49,7 @@ static class Program
 
     private static async Task<List<Entitlement>> GetEntitlementsAsync()
     {
-        var response = await Client.GetFromJsonAsync<EntitlementListResponse>($"{BaseUrl}/api/v1/entitlements?limit=100");
+        var response = await Client.GetFromJsonAsync<EntitlementListResponse>($"{BaseUrl}/api/v1/entitlements?pageSize=100&pageNumber=1");
         return response?.Items ?? new List<Entitlement>();
     }
 
